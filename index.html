@@ -1,0 +1,92 @@
+<!-- ============================================
+     INDEX.HTML — ESTRUTURA PRINCIPAL DA LOJA
+     ============================================ -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <!-- ========== HEAD ========== -->
+  <head>
+
+    <!-- ---------- META TAGS ---------- -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Micro loja de autoatendimento — Complexo DOM" />
+    <meta property="og:title" content="Complexo DOM — Loja" />
+    <meta property="og:description" content="Monte seu pedido e pague na hora." />
+    <title>Complexo DOM — Loja</title>
+
+    <!-- ---------- FONTS ---------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ---------- CSS ---------- -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+  </head>
+
+  <!-- ========== BODY ========== -->
+  <body>
+
+  <!-- ========== HEADER ========== -->
+<header class="header" role="banner">
+
+  <!-- ---------- LOGO ---------- -->
+  <button class="header__logo-btn" id="btn-logo" aria-label="Voltar ao início">
+    <img
+      class="header__logo-img"
+      src="/images/logo.webp"
+      alt="Complexo DOM"
+      width="180"
+      height="84"
+    />
+  </button>
+
+      <!-- ---------- BOTÃO CARRINHO + BADGE ---------- -->
+      <button class="header__cart-btn" id="btn-carrinho" aria-label="Ver carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-badge" id="cart-badge" aria-live="polite">0</span>
+      </button>
+
+    </header>
+
+    <!-- ========== MAIN — VIEWS DA LOJA ========== -->
+    <!-- CADA VIEW É UM CONTÊINER VAZIO PREENCHIDO PELO MÓDULO CORRESPONDENTE -->
+    <main id="app" role="main">
+
+      <!-- ---------- VIEW 1 — CATÁLOGO ---------- -->
+      <section id="view-catalogo" class="view view--active" aria-label="Catálogo de produtos">
+        <div id="catalogo-root"></div>
+      </section>
+
+      <!-- ---------- VIEW 2 — CARRINHO ---------- -->
+      <section id="view-carrinho" class="view" aria-label="Carrinho">
+        <div id="carrinho-root"></div>
+      </section>
+
+      <!-- ---------- VIEW 3 — PAGAMENTO ---------- -->
+      <section id="view-pagamento" class="view" aria-label="Pagamento">
+        <div id="pagamento-root"></div>
+      </section>
+
+      <!-- ---------- VIEW 4 — CONFIRMAÇÃO ---------- -->
+      <section id="view-confirmacao" class="view" aria-label="Confirmação do pedido">
+        <div id="confirmacao-root"></div>
+      </section>
+
+    </main>
+
+    <!-- ========== SCRIPT — PONTO DE ENTRADA ========== -->
+    <script type="module" src="/src/main.js"></script>
+
+  </body>
+
+</html>
